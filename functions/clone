@@ -1,27 +1,25 @@
 #!/usr/bin/env zsh
 
-##? clone a git repo
+##? Clones a repo into /Volumes/SourceCode/Personal or /Volumes/SourceCode/Work
+##? Usage: clone <repo> P[ersonal] | W[ork]
 
-if [[ -z "$1" ]]; then
-  echo "What git repo do you want?" >&2
-  return 1
-fi
-local user repo
-if [[ "$1" = */* ]]; then
-  user=${1%/*}
-  repo=${1##*/}
-else
-  user=mattmc3
-  repo=$1
-fi
+local dest repoName repoType
+dest=$1
+repoName=$(basename $dest .git)
 
-local giturl="github.com"
-local dest=${XDG_PROJECTS_HOME:-~/Projects}/$user/$repo
+# Set repo type
+case $2 in
+    P|p)
+        repoType="Personal"
+        ;;
+    W|w)
+        repoType="Work"
+        ;;
+    *)
+        echo "Invalid repo type"
+        exit 1
+        ;;
+esac
 
-if [[ ! -d $dest ]]; then
-  git clone --recurse-submodules "git@${giturl}:${user}/${repo}.git" "$dest"
-else
-  echo "No need to clone, that directory already exists."
-  echo "Taking you there."
-fi
-cd $dest
+# Clone repo
+git clone $dest /Volumes/SourceCode/$repoType/$repoName
