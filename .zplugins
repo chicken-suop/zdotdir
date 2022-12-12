@@ -31,17 +31,17 @@ mattmc3/zman
 
 # deferred plugins
 olets/zsh-abbr kind:defer
-$ZDOTDIR/plugins/abbreviations
+$ZDOTDIR/plugins/abbreviations kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
+wfxr/forgit kind:defer
 
 # z
 rupa/z
 $ZDOTDIR/plugins/z
 
-### ^^^ ###
-
 # completions
 mattmc3/zephyr path:plugins/completions
+lukechilds/zsh-better-npm-completion
 
 # history-substring-search
 zsh-users/zsh-history-substring-search

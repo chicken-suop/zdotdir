@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+
+##? Creates unique backups of specified files
+
 local now f
 now=$(date +"%Y%m%d-%H%M%S")
 for f in "$@"; do

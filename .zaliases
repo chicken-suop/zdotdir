@@ -22,6 +22,8 @@ alias -g ......='../../../../..'
 # single character shortcuts - be sparing!
 alias _=sudo
 alias l=ls
+alias y='yarn'
+alias nx='npm run'
 
 # mask built-ins with better defaults
 alias mkdir='mkdir -p'
@@ -103,3 +105,6 @@ alias todos="$VISUAL $HOME/Desktop/todo.txt"
 if [[ "$OSTYPE" == darwin* ]]; then
   alias code="open -b com.microsoft.VSCode"
 fi
+
+# Start spotifyd
+alias spotifydstart="spotifyd --device-name 'MacBook Pro' --config-path $HOME/.config/spotifyd/spotifyd.conf"

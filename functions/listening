@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+##? List listening ports
+
+if test $# -eq 0
+then
+	sudo lsof -iTCP -sTCP:LISTEN -n -P
+elif test $# -eq 1
+then
+	sudo lsof -iTCP -sTCP:LISTEN -n -P | grep --color=auto --exclude-dir={.git,.svn} -i --color $1
+else
+	echo "Usage: listening [pattern]"
+fi

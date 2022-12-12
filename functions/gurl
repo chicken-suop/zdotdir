@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
-# make a URL for git
+
+##? make a URL for git
+
 local parts url user
 parts=(${(@s:/:)1})
 

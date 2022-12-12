@@ -14,7 +14,7 @@ autoload-dir $ZDOTDIR/functions
 # drive config with antidote
 ANTIDOTE_HOME=$ZDOTDIR/plugins/.external
 ANTIDOTE_DIR=$ZDOTDIR/.antidote
-#ANTIDOTE_DIR=~/Projects/mattmc3/antidote
+
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 zstyle ':antidote:bundle' file $ZDOTDIR/.zplugins.txt
 
@@ -41,3 +41,8 @@ source $ZDOTDIR/.zaliases
 
 # done profiling
 [[ ${ZPROFRC:-0} -eq 0 ]] || { unset ZPROFRC && zprof }
+
+# pnpm
+export PNPM_HOME="/Users/el/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

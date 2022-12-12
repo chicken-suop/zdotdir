@@ -32,17 +32,17 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-export EDITOR='nvim'
+export EDITOR='code'
 export VISUAL='code'
 export PAGER='less'
 
 # use `< file` to quickly view the contents of any file.
 [[ -z "$READNULLCMD" ]] || READNULLCMD=$PAGER
 
-export TZ="America/New_York"
-export LANG="en_US.UTF-8"
+export TZ="Australia/Gold_Coast"
+export LANG="en_AU.UTF-8"
 export LANGUAGE="en"
-export LC_ALL="en_US.UTF-8"
+export LC_ALL="en_AU.UTF-8"
 
 # Ensure path arrays do not contain duplicates
 typeset -gU cdpath fpath mailpath path
@@ -53,12 +53,12 @@ path=(
   /usr/local/{bin,sbin}(N)
   ~/.emacs.d/bin(N)
   ~/.config/emacs/bin(N)
+  ~/.yarn/bin(N)
   $HOMEBREW_PREFIX/opt/curl/bin(N)
   $HOMEBREW_PREFIX/opt/go/libexec/bin(N)
   $HOMEBREW_PREFIX/opt/ruby/bin(N)
   $HOMEBREW_PREFIX/lib/ruby/gems/3.1.0/bin(N)
   ~/.gem/ruby/3.1.0/bin(N)
-  $HOMEBREW_PREFIX/share/npm/bin(N)
   $path
 )
 
